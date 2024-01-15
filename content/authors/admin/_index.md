@@ -86,12 +86,12 @@ education:
       - name: Skiing
         description: ''
         percent: 100
-        icon: person-skiing
+        icon: person-hiking
         icon_pack: fas
       - name: Cooking
         description: ''
         percent: 80
-        icon: user-chef
+        icon: person-hiking
         icon_pack: fas
 
 # Social/Academic Networking
