@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications — Sara Pidò</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .filter-btn {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: white;
+    }
+    .pub-section-header {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin: 2.5rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .pub-section-header::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .scholar-cta {
+      background: var(--teal-pale);
+      border-radius: var(--radius);
+      border: 1px solid #b8d8d8;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .scholar-cta p { color: var(--teal); font-size: 0.9rem; font-weight: 500; }
+    .scholar-cta strong { display: block; font-family: var(--font-display); font-size: 1.1rem; color: var(--ink); }
+  </style>
+</head>
+<body>
+  <div id="nav-container"></div>
+  <main>
+    <div class="page-hero fade-in">
+      <p class="section-subtitle">Research Output</p>
+      <h1>Publications</h1>
+      <p>Peer-reviewed papers in machine learning, explainability, NLP, and embedded AI.</p>
+    </div>
+
+    <div class="section fade-in fade-in-delay-1">
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="xai">XAI</button>
+        <button class="filter-btn" data-filter="cv">Computer Vision</button>
+        <button class="filter-btn" data-filter="nlp">NLP / AutoML</button>
+        <button class="filter-btn" data-filter="bio">Bioinformatics</button>
+      </div>
+
+      <div class="pub-section-header">2025</div>
+
+      <div class="pub-card fade-in" data-topic="cv">
+        <div class="pub-year">2025</div>
+        <div class="pub-body">
+          <div class="pub-title">Comparative Analysis of Lightweight Vision Models on Embedded Accelerator Devices</div>
+          <div class="pub-authors">Corti G., Veronesi C., Bartoli P., <strong>Pidò S.</strong>, Giudici A., Palermo F., Trojaniello D., Matteucci M., Mentasti S.</div>
+          <div class="pub-venue">ICIAP 2025 (Accepted)</div>
+          <div style="margin-top:0.6rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Embedded AI</span>
+            <span class="tag">ICIAP 2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-section-header">2024</div>
+
+      <div class="pub-card fade-in" data-topic="xai">
+        <div class="pub-year">2024</div>
+        <div class="pub-body">
+          <div class="pub-title">Explingo: Explaining AI Predictions using Large Language Models</div>
+          <div class="pub-authors">Zytek A., <strong>Pidò S.</strong>, Alnegheimish S., Berti-Equille L., Veeramachaneni K.</div>
+          <div class="pub-venue">IEEE Big Data 2024</div>
+          <div style="margin-top:0.6rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+            <span class="tag">XAI</span>
+            <span class="tag">LLMs</span>
+            <span class="tag">IEEE Big Data</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-card fade-in" data-topic="xai">
+        <div class="pub-year">2024</div>
+        <div class="pub-body">
+          <div class="pub-title">LLMs for XAI: Future Directions for Explaining Explanations</div>
+          <div class="pub-authors">Zytek A.*, <strong>Pidò S.</strong>*, Veeramachaneni K. <em>(* equal contribution)</em></div>
+          <div class="pub-venue">HXCAI Workshop @ CHI 2024</div>
+          <div style="margin-top:0.6rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+            <span class="tag">XAI</span>
+            <span class="tag">LLMs</span>
+            <span class="tag">CHI 2024</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-section-header">Earlier</div>
+
+      <div class="pub-card fade-in" data-topic="nlp">
+        <div class="pub-year">—</div>
+        <div class="pub-body">
+          <div class="pub-title">Ask Your Data — Supporting Data Science Processes by Combining AutoML and Conversational Interfaces</div>
+          <div class="pub-authors"><strong>Pidò S.</strong>, Pinoli P., Crovari P., Ieva F., Garzotto F., Ceri S.</div>
+          <div class="pub-venue">IEEE Access</div>
+          <div style="margin-top:0.6rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+            <span class="tag">AutoML</span>
+            <span class="tag">NLP</span>
+            <span class="tag">IEEE Access</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scholar-cta">
+        <div>
+          <strong>See full list on Google Scholar</strong>
+          <p>Including preprints, workshop papers, and citation metrics.</p>
+        </div>
+        <a href="https://scholar.google.com/citations?user=M_SrptEAAAAJ&hl=en"
+           target="_blank" class="btn btn-primary">Open Scholar →</a>
+      </div>
+
+    </div>
+  </main>
+  <div id="footer-container"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Filter logic
+    const btns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.pub-card');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(c => {
+          c.style.display = (f === 'all' || c.dataset.topic === f) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me — Sara Pidò</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .about-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 4rem 2rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media (max-width: 640px) { .about-hero { grid-template-columns: 1fr; } }
+
+    .about-photo-frame {
+      width: 280px;
+      height: 320px;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--teal-pale), #c8e8e8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 48px rgba(26,107,107,0.15);
+      animation: morphBlob2 10s ease-in-out infinite;
+    }
+    @keyframes morphBlob2 {
+      0%,100%{ border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+      50%    { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+    }
+    .about-photo-frame img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+    .about-initials { font-family:var(--font-display); font-size:4rem; color:var(--teal); font-weight:700; text-align:center; }
+    .about-initials small { display:block; font-size:0.7rem; font-family:var(--font-body); font-weight:400; color:var(--teal); opacity:0.6; margin-top:0.4rem; }
+
+    .about-quote {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+    .about-quote em { color: var(--teal); }
+
+    .belief-card {
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+      border-radius: var(--radius);
+      padding: 2rem;
+      color: white;
+      margin: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .belief-card::before {
+      content: '"';
+      position: absolute;
+      top: -20px; right: 20px;
+      font-family: var(--font-display);
+      font-size: 10rem;
+      color: rgba(255,255,255,0.1);
+      line-height: 1;
+    }
+    .belief-card p { font-size: 1.05rem; line-height: 1.7; position: relative; }
+
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .hobby-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: all 0.25s;
+      cursor: default;
+    }
+    .hobby-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+      border-color: var(--teal-pale);
+    }
+    .hobby-emoji { font-size: 2.5rem; display:block; margin-bottom: 0.6rem; }
+    .hobby-name { font-family: var(--font-display); font-size: 0.95rem; font-weight:700; color:var(--ink); margin-bottom:0.25rem; }
+    .hobby-desc { font-size:0.78rem; color:var(--mist); line-height:1.5; }
+
+    .fun-fact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .fun-fact {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .fun-fact::after {
+      content: attr(data-num);
+      position: absolute;
+      bottom: -15px; right: -5px;
+      font-family: var(--font-display);
+      font-size: 5rem;
+      font-weight: 700;
+      color: var(--teal-pale);
+      line-height: 1;
+    }
+    .fun-fact-text { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.55; position: relative; }
+    .fun-fact-text strong { color: var(--ink); }
+
+    .connect-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .connect-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      color: var(--ink-soft);
+    }
+    .connect-btn:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+<body>
+  <div id="nav-container"></div>
+  <main>
+
+    <div class="about-hero fade-in">
+      <div>
+        <p class="section-subtitle">The Human Behind the Research</p>
+        <div class="about-quote">
+          Technology should serve <em>people</em> and improve everyday life.
+        </div>
+        <p style="color:var(--ink-soft);font-size:1rem;line-height:1.7">
+          I'm Sara — an AI researcher who genuinely loves what I do. I spent my PhD making data science accessible to everyone, then took that energy to MIT, back to Milan, and into the mountains on weekends.
+        </p>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <div class="about-photo-frame">
+          <img src="assets/img/sara.jpg" alt="Sara Pidò"
+               onerror="this.parentElement.innerHTML='<div class=\'about-initials\'>SP<small>assets/img/sara.jpg</small></div>'" />
+        </div>
+      </div>
+    </div>
+
+    <!-- BELIEF -->
+    <div class="section fade-in fade-in-delay-1">
+      <div class="belief-card">
+        <p>
+          I'm driven by the belief that the best AI research happens when you stay close to people — their needs, their confusion, their delight. Whether I'm building explainability tools, mentoring a student, or optimizing a model for deployment on a tiny chip, the question I keep asking is: <strong>does this actually help someone?</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- HOBBIES -->
+    <div class="section fade-in fade-in-delay-2">
+      <p class="section-subtitle">Outside the Lab</p>
+      <h2 class="section-title">When I'm Not Coding</h2>
+      <div class="hobby-grid">
+        <div class="hobby-card">
+          <span class="hobby-emoji">🏃‍♀️</span>
+          <div class="hobby-name">Running</div>
+          <div class="hobby-desc">Early mornings, long routes, the kind that clears your head before the work begins.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-emoji">🏔️</span>
+          <div class="hobby-name">Hiking</div>
+          <div class="hobby-desc">The Alps are right there — I make the most of it. Mountains reset everything.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-emoji">🍳</span>
+          <div class="hobby-name">Cooking</div>
+          <div class="hobby-desc">Italian cooking, obviously. Also experimenting — kitchen is a great low-stakes lab.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-emoji">🚲</span>
+          <div class="hobby-name">Cycling</div>
+          <div class="hobby-desc">Milan by bike. Sometimes long weekend rides through Lombardy.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-emoji">📚</span>
+          <div class="hobby-name">Reading</div>
+          <div class="hobby-desc">Mix of science, fiction, and anything that challenges how I think.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-emoji">🎮</span>
+          <div class="hobby-name">Board Games</div>
+          <div class="hobby-desc">Yes, I coded Lorenzo il Magnifico for my BSc thesis. Yes, I still play it.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-emoji">🌍</span>
+          <div class="hobby-name">Travelling</div>
+          <div class="hobby-desc">Milan ↔ Cambridge ↔ Zurich ↔ Leuven. Always up for the next destination.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-emoji">👫</span>
+          <div class="hobby-name">People</div>
+          <div class="hobby-desc">Recharging with friends, family, good food, and long conversations.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUN FACTS -->
+    <div class="section fade-in fade-in-delay-3">
+      <p class="section-subtitle">Quick Facts</p>
+      <h2 class="section-title">A Few Things About Me</h2>
+      <div class="fun-fact-grid">
+        <div class="fun-fact" data-num="01">
+          <div class="fun-fact-text"><strong>Built a board game</strong> as my BSc thesis — Lorenzo il Magnifico. It still gets played.</div>
+        </div>
+        <div class="fun-fact" data-num="02">
+          <div class="fun-fact-text"><strong>Taught ML to high schoolers</strong> before it was cool. They were better at it than expected.</div>
+        </div>
+        <div class="fun-fact" data-num="03">
+          <div class="fun-fact-text"><strong>Erasmus in Leuven</strong> — lived in Belgium, survived the rain, loved the waffles.</div>
+        </div>
+        <div class="fun-fact" data-num="04">
+          <div class="fun-fact-text"><strong>Runner who hikes</strong> — or hiker who runs? The Alps answer that question every weekend.</div>
+        </div>
+        <div class="fun-fact" data-num="05">
+          <div class="fun-fact-text"><strong>PhD cum Laude</strong> on making AI accessible to non-experts, which is exactly what I keep doing.</div>
+        </div>
+        <div class="fun-fact" data-num="06">
+          <div class="fun-fact-text"><strong>Collaborated on 3 continents</strong> — Italy, Switzerland, and the US, all within a few years.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONNECT -->
+    <div class="section fade-in fade-in-delay-3">
+      <p class="section-subtitle">Let's Talk</p>
+      <h2 class="section-title">Get in Touch</h2>
+      <p style="color:var(--ink-soft);max-width:500px;margin-bottom:0.5rem">
+        I'm always happy to chat about research collaborations, speaking invitations, or just interesting ideas. Find me here:
+      </p>
+      <div class="connect-row">
+        <a href="mailto:sarapido95@gmail.com" class="connect-btn">✉️ Email</a>
+        <a href="https://linkedin.com/in/sara-pido" target="_blank" class="connect-btn">💼 LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=M_SrptEAAAAJ&hl=en" target="_blank" class="connect-btn">🎓 Google Scholar</a>
+        <a href="https://github.com/SaraPido" target="_blank" class="connect-btn">🐙 GitHub</a>
+      </div>
+    </div>
+
+  </main>
+  <div id="footer-container"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

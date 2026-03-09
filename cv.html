@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Sara Pidò</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .cv-download-bar {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+    .cv-download-bar p { font-size: 0.875rem; color: var(--ink-soft); }
+    .cv-download-bar strong { display: block; font-size: 1rem; color: var(--ink); }
+
+    .cv-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    @media (max-width: 700px) { .cv-two-col { grid-template-columns: 1fr; } }
+
+    .cv-section { margin-bottom: 2.5rem; }
+    .cv-section-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .skills-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+
+    .lang-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .lang-item:last-child { border-bottom: none; }
+    .lang-name { font-weight: 600; font-size: 0.9rem; color: var(--ink); }
+    .lang-level {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    .edu-item { margin-bottom: 1.25rem; }
+    .edu-year { font-family: var(--font-mono); font-size: 0.75rem; color: var(--teal); font-weight: 500; margin-bottom: 0.2rem; }
+    .edu-degree { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.15rem; }
+    .edu-school { font-size: 0.85rem; font-weight: 600; color: var(--coral); margin-bottom: 0.2rem; }
+    .edu-detail { font-size: 0.82rem; color: var(--mist); }
+
+    .award-item {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .award-item:last-child { border-bottom: none; }
+    .award-year { font-family: var(--font-mono); font-size: 0.75rem; color: var(--teal); font-weight: 500; min-width: 45px; padding-top: 2px; }
+    .award-text { font-size: 0.88rem; color: var(--ink-soft); }
+    .award-text strong { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <div id="nav-container"></div>
+  <main>
+    <div class="page-hero fade-in">
+      <p class="section-subtitle">Curriculum Vitae</p>
+      <h1>Sara <em>Pidò</em></h1>
+      <p>AI Researcher · PostDoc @ Smart Eyewear Lab, Politecnico di Milano &amp; EssilorLuxottica</p>
+    </div>
+
+    <div class="section fade-in fade-in-delay-1">
+
+      <div class="cv-download-bar">
+        <div>
+          <strong>Download Full CV</strong>
+          <p>PDF version — updated 2025</p>
+        </div>
+        <!-- Replace href with your actual CV PDF path -->
+        <a href="assets/cv/sara_pido_cv.pdf" download class="btn btn-primary">⬇ Download PDF</a>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="cv-section">
+        <div class="cv-section-title">Work Experience</div>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot filled"></div>
+            <div class="timeline-date">2025 — Present</div>
+            <div class="timeline-title">Postdoctoral Associate</div>
+            <div class="timeline-org">Smart Eyewear Lab · Politecnico di Milano &amp; EssilorLuxottica · Milan, IT</div>
+            <div class="timeline-desc">
+              <ul>
+                <li>Project lead across 3 concurrent CV &amp; embedded AI projects: define scope, requirements, milestones, and success metrics.</li>
+                <li>Lead model development and embedded optimization (quantization, lightweight compression); drive hardware integration from prototype to on-device deployment.</li>
+                <li>Supervise and mentor MSc/PhD students on multimodal projects leveraging VLMs and LLMs.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2024</div>
+            <div class="timeline-title">Postdoctoral Associate</div>
+            <div class="timeline-org">Data to AI Lab · MIT · Cambridge, US</div>
+            <div class="timeline-desc">
+              <ul>
+                <li>Organized workstreams and timelines, ran user studies and supervised students on XAI solutions leveraging LLMs.</li>
+                <li>Co-designed and developed an anomaly-detection pipeline for Iberdrola (wind turbines).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">May–Aug 2023</div>
+            <div class="timeline-title">Data Scientist Intern</div>
+            <div class="timeline-org">Calvin Risk · Zurich, CH</div>
+            <div class="timeline-desc">
+              <ul>
+                <li>Designed, developed, and integrated AI incident-risk models into enterprise risk-management platforms.</li>
+                <li>Supported integration of the EU AI Act for AI governance and responsible AI.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2022</div>
+            <div class="timeline-title">Visiting Research Assistant</div>
+            <div class="timeline-org">Data to AI Lab · MIT · Cambridge, US</div>
+            <div class="timeline-desc">
+              <ul>
+                <li>Led design and delivery of a time-series pipeline with AutoML.</li>
+                <li>Collaborated with Iberdrola on wind-turbine data projects.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020–2023</div>
+            <div class="timeline-title">Research Assistant</div>
+            <div class="timeline-org">Politecnico di Milano · Milan, IT</div>
+            <div class="timeline-desc">Developed NLP and ML algorithms to automate complex data science processes; led master students.</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020–2022</div>
+            <div class="timeline-title">Teaching Assistant</div>
+            <div class="timeline-org">Politecnico di Milano · Milan, IT</div>
+            <div class="timeline-desc">Python for MSc Bioinformatics; C &amp; MATLAB for BSc students; ML course for high school students.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="cv-two-col">
+        <div>
+          <!-- EDUCATION -->
+          <div class="cv-section">
+            <div class="cv-section-title">Education</div>
+            <div class="edu-item">
+              <div class="edu-year">2020–2023</div>
+              <div class="edu-degree">PhD — Data Analytics &amp; Decision Science</div>
+              <div class="edu-school">Politecnico di Milano · cum Laude</div>
+              <div class="edu-detail">ERC Advanced Grant (693174) · Thesis: Exploiting AI and NLP methods for Empowering Naive Users in Solving Data Science Problems</div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-year">2022</div>
+              <div class="edu-degree">Visiting PhD — Data to AI Lab</div>
+              <div class="edu-school">Massachusetts Institute of Technology</div>
+              <div class="edu-detail">Rocca Project Fellowship</div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-year">2017–2019</div>
+              <div class="edu-degree">M.Sc. Computer Science Engineering</div>
+              <div class="edu-school">Politecnico di Milano · 110/110</div>
+              <div class="edu-detail">Thesis: Network integration algorithms for the analysis of biological data</div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-year">2018–2019</div>
+              <div class="edu-degree">Erasmus+ Computer Science</div>
+              <div class="edu-school">KU Leuven · Belgium</div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-year">2014–2017</div>
+              <div class="edu-degree">B.Sc. Computer Engineering</div>
+              <div class="edu-school">Politecnico di Milano</div>
+              <div class="edu-detail">Thesis: Development of the game Lorenzo il Magnifico</div>
+            </div>
+          </div>
+
+          <!-- AWARDS -->
+          <div class="cv-section">
+            <div class="cv-section-title">Awards &amp; Fellowships</div>
+            <div class="award-item">
+              <div class="award-year">2022</div>
+              <div class="award-text"><strong>Rocca Project Fellowship</strong> — MIT Visiting PhD</div>
+            </div>
+            <div class="award-item">
+              <div class="award-year">2020</div>
+              <div class="award-text"><strong>ERC Advanced Grant (693174)</strong> — PhD Fellowship, Politecnico di Milano</div>
+            </div>
+            <div class="award-item">
+              <div class="award-year">2023</div>
+              <div class="award-text"><strong>PhD cum Laude</strong> — Politecnico di Milano</div>
+            </div>
+          </div>
+
+          <!-- LANGUAGES -->
+          <div class="cv-section">
+            <div class="cv-section-title">Languages</div>
+            <div class="lang-item"><span class="lang-name">Italian</span><span class="lang-level">Native</span></div>
+            <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">C1 — Proficient</span></div>
+          </div>
+        </div>
+
+        <div>
+          <!-- SKILLS -->
+          <div class="cv-section">
+            <div class="cv-section-title">Management Skills</div>
+            <div class="skills-tags">
+              <span class="tag">PRDs &amp; Roadmaps</span>
+              <span class="tag">KPI Design</span>
+              <span class="tag">Stakeholder Management</span>
+              <span class="tag">Milestone Definition</span>
+              <span class="tag">Cross-team Coordination</span>
+              <span class="tag">User Research</span>
+              <span class="tag">Experiment Design</span>
+              <span class="tag">Prioritization</span>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <div class="cv-section-title">AI / Data Science</div>
+            <div class="skill-group">
+              <div class="skill-group-title">Core Areas</div>
+              <div class="skills-tags">
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Deep Learning</span>
+                <span class="tag">NLP / LLMs</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">AutoML</span>
+                <span class="tag">XAI</span>
+                <span class="tag">Embedded AI</span>
+                <span class="tag">Time-Series</span>
+              </div>
+            </div>
+            <div class="skill-group" style="margin-top:1rem">
+              <div class="skill-group-title">Proficiency</div>
+              <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" data-width="96%" style="width:0"></div></div></div>
+              <div class="skill-item"><span class="skill-name">PyTorch / TF</span><div class="skill-bar"><div class="skill-fill" data-width="90%" style="width:0"></div></div></div>
+              <div class="skill-item"><span class="skill-name">Scikit-learn</span><div class="skill-bar"><div class="skill-fill" data-width="92%" style="width:0"></div></div></div>
+              <div class="skill-item"><span class="skill-name">MATLAB / C</span><div class="skill-bar"><div class="skill-fill" data-width="75%" style="width:0"></div></div></div>
+              <div class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-fill" data-width="80%" style="width:0"></div></div></div>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <div class="cv-section-title">Cloud &amp; Tools</div>
+            <div class="skills-tags">
+              <span class="tag">Google Cloud</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Azure</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Confluence</span>
+              <span class="tag">Notion</span>
+              <span class="tag">Office</span>
+            </div>
+          </div>
+
+          <!-- REFEREES -->
+          <div class="cv-section">
+            <div class="cv-section-title">Referees</div>
+            <div style="display:flex;flex-direction:column;gap:0.75rem">
+              <div class="card" style="padding:1rem">
+                <div style="font-weight:700;font-size:0.9rem;color:var(--ink)">Matteo Matteucci</div>
+                <div style="font-size:0.8rem;color:var(--mist)">Politecnico di Milano</div>
+                <a href="mailto:matteo.matteucci@polimi.it" style="font-size:0.8rem;color:var(--teal)">matteo.matteucci@polimi.it</a>
+              </div>
+              <div class="card" style="padding:1rem">
+                <div style="font-weight:700;font-size:0.9rem;color:var(--ink)">Kalyan Veeramachaneni</div>
+                <div style="font-size:0.8rem;color:var(--mist)">MIT Cambridge</div>
+                <a href="mailto:kalyan@csail.mit.edu" style="font-size:0.8rem;color:var(--teal)">kalyan@csail.mit.edu</a>
+              </div>
+              <div class="card" style="padding:1rem">
+                <div style="font-weight:700;font-size:0.9rem;color:var(--ink)">Stefano Ceri</div>
+                <div style="font-size:0.8rem;color:var(--mist)">Politecnico di Milano</div>
+                <a href="mailto:stefano.ceri@polimi.it" style="font-size:0.8rem;color:var(--teal)">stefano.ceri@polimi.it</a>
+              </div>
+              <div class="card" style="padding:1rem">
+                <div style="font-weight:700;font-size:0.9rem;color:var(--ink)">Julian Riebartsch</div>
+                <div style="font-size:0.8rem;color:var(--mist)">Calvin Risk, Zurich</div>
+                <a href="mailto:jr@calvin-risk.com" style="font-size:0.8rem;color:var(--teal)">jr@calvin-risk.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <div id="footer-container"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

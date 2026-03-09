@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sara Pidò — AI Researcher</title>
+  <meta name="description" content="Sara Pidò — AI Researcher and PostDoc at Politecnico di Milano. Computer Vision, NLP, Embedded AI." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .hero {
+      min-height: calc(100vh - 64px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; text-align: center; gap: 2rem; padding: 3rem 1.5rem; }
+      .hero-photo-wrap { order: -1; display: flex; justify-content: center; }
+      .hero-chip { display: none; }
+    }
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 .name-highlight { color: var(--teal); display: block; }
+    .hero h1 .role-line {
+      font-size: 0.55em;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink-soft);
+      display: block;
+      margin-top: 0.25em;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-photo-wrap { position: relative; display: flex; justify-content: center; }
+    .hero-photo-frame {
+      width: 300px;
+      height: 360px;
+      border-radius: 40% 60% 55% 45% / 45% 45% 55% 55%;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(26,107,107,0.2);
+      animation: morphBlob 8s ease-in-out infinite;
+      background: linear-gradient(135deg, var(--teal-pale) 0%, #c8e8e8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @keyframes morphBlob {
+      0%, 100% { border-radius: 40% 60% 55% 45% / 45% 45% 55% 55%; }
+      33%       { border-radius: 55% 45% 40% 60% / 60% 55% 45% 40%; }
+      66%       { border-radius: 45% 55% 60% 40% / 50% 60% 40% 50%; }
+    }
+    .hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .initials-fallback {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      color: var(--teal);
+      font-weight: 700;
+      text-align: center;
+    }
+    .initials-fallback small {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--teal);
+      opacity: 0.6;
+      font-family: var(--font-body);
+      font-weight: 400;
+      margin-top: 0.5rem;
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 10px;
+      background: white;
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .hero-badge .badge-num { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--teal); line-height: 1; }
+    .hero-badge .badge-label { color: var(--mist); font-size: 0.7rem; margin-top: 2px; }
+    .hero-chip {
+      position: absolute;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      padding: 6px 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      white-space: nowrap;
+    }
+    .chip-cv  { top: 20px; left: 0; animation: float1 4s ease-in-out infinite; }
+    .chip-nlp { top: 45%; right: -10px; animation: float2 5s ease-in-out infinite; }
+    .chip-mit { bottom: 90px; left: -10px; animation: float1 6s ease-in-out infinite reverse; }
+    @keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+    .stats-row {
+      display: flex;
+      gap: 3rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; min-width: 80px; }
+    .stat-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--teal); line-height: 1; }
+    .stat-label { font-size: 0.8rem; color: var(--mist); margin-top: 4px; font-weight: 500; }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .featured-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+    .featured-card::before {
+      content:'';
+      position:absolute;
+      top:0;left:0;
+      width:4px;height:100%;
+      background:var(--teal);
+      transform:scaleY(0);
+      transform-origin:top;
+      transition:transform 0.25s;
+    }
+    .featured-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+    .featured-card:hover::before { transform: scaleY(1); }
+    .fc-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .fc-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem; }
+    .fc-desc { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.55; }
+
+    .pub-teaser {
+      background: var(--teal);
+      border-radius: var(--radius);
+      padding: 2rem;
+      color: white;
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .pub-teaser-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.4rem; }
+    .pub-teaser-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.3rem; }
+    .pub-teaser-venue { font-size: 0.85rem; opacity: 0.75; font-style: italic; }
+    .pub-teaser .btn { background: white; color: var(--teal); flex-shrink: 0; }
+    .pub-teaser .btn:hover { background: var(--teal-pale); }
+  </style>
+</head>
+<body>
+  <div id="nav-container"></div>
+  <main>
+    <section class="hero">
+      <div class="hero-text fade-in">
+        <p class="hero-eyebrow">👋 Hello, I'm</p>
+        <h1>
+          <span class="name-highlight">Sara Pidò</span>
+          <span class="role-line">AI Researcher &amp; Project Lead</span>
+        </h1>
+        <p class="hero-desc">
+          I build AI systems that work in the real world — from embedded computer vision on smart eyewear to LLMs that explain their own reasoning. PostDoc at Politecnico di Milano &amp; EssilorLuxottica, former MIT.
+        </p>
+        <div class="hero-cta">
+          <a href="publications.html" class="btn btn-primary"><span>📄</span> Publications</a>
+          <a href="cv.html" class="btn btn-outline"><span>📋</span> View CV</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap fade-in fade-in-delay-2">
+        <div class="hero-photo-frame" id="photoFrame">
+          <img src="assets/img/sara.jpg" alt="Sara Pidò"
+               onerror="this.parentElement.innerHTML='<div class=\'initials-fallback\'>SP<small>Add photo →<br>assets/img/sara.jpg</small></div>'" />
+        </div>
+        <div class="hero-badge">
+          <div class="badge-num">PhD</div>
+          <div class="badge-label">cum Laude</div>
+        </div>
+        <div class="hero-chip chip-cv">💻 Computer Vision</div>
+        <div class="hero-chip chip-nlp">🧠 NLP &amp; LLMs</div>
+        <div class="hero-chip chip-mit">🎓 MIT · PoliMi</div>
+      </div>
+    </section>
+
+    <div class="section">
+      <div class="stats-row fade-in fade-in-delay-1">
+        <div class="stat-item"><div class="stat-num">4+</div><div class="stat-label">Publications</div></div>
+        <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Active Projects</div></div>
+        <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">PostDoc Positions</div></div>
+        <div class="stat-item"><div class="stat-num">MIT</div><div class="stat-label">International Exp.</div></div>
+      </div>
+    </div>
+
+    <div class="section fade-in fade-in-delay-2">
+      <p class="section-subtitle">Research Focus</p>
+      <h2 class="section-title">What I Work On</h2>
+      <div class="featured-grid">
+        <a href="activities.html" class="featured-card">
+          <div class="fc-icon">👁️</div>
+          <div class="fc-title">Embedded Computer Vision</div>
+          <div class="fc-desc">On-device CV for smart eyewear — quantization, lightweight models, prototype to deployment.</div>
+        </a>
+        <a href="publications.html" class="featured-card">
+          <div class="fc-icon">🤖</div>
+          <div class="fc-title">LLMs for Explainability</div>
+          <div class="fc-desc">Making ML explanations human-readable with large language models — XAI that actually helps.</div>
+        </a>
+        <a href="activities.html" class="featured-card">
+          <div class="fc-icon">🌬️</div>
+          <div class="fc-title">Predictive Maintenance</div>
+          <div class="fc-desc">Anomaly detection for wind turbines bridging expert knowledge with data-driven models.</div>
+        </a>
+        <a href="activities.html" class="featured-card">
+          <div class="fc-icon">🧩</div>
+          <div class="fc-title">AutoML &amp; Accessibility</div>
+          <div class="fc-desc">Data science for non-experts through conversational interfaces and NLP-powered pipelines.</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="section fade-in fade-in-delay-3">
+      <p class="section-subtitle">Latest Research</p>
+      <h2 class="section-title">Recent Publication</h2>
+      <div class="pub-teaser">
+        <div>
+          <div class="pub-teaser-label">📖 IEEE Big Data 2024</div>
+          <div class="pub-teaser-title">Explingo: Explaining AI Predictions using Large Language Models</div>
+          <div class="pub-teaser-venue">Zytek, Pidò, Alnegheimish, Berti-Equille, Veeramachaneni</div>
+        </div>
+        <a href="publications.html" class="btn">See all →</a>
+      </div>
+    </div>
+
+    <div class="section fade-in fade-in-delay-3">
+      <p class="section-subtitle">Career Snapshot</p>
+      <h2 class="section-title">Where I've Been</h2>
+      <div class="timeline" style="margin-top:2rem">
+        <div class="timeline-item">
+          <div class="timeline-dot filled"></div>
+          <div class="timeline-date">2025 — Present</div>
+          <div class="timeline-title">PostDoc @ Smart Eyewear Lab</div>
+          <div class="timeline-org">Politecnico di Milano &amp; EssilorLuxottica · Milan, IT</div>
+          <div class="timeline-desc">Leading 3 concurrent CV &amp; embedded AI projects end-to-end.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024</div>
+          <div class="timeline-title">PostDoc @ Data to AI Lab</div>
+          <div class="timeline-org">MIT · Cambridge, US</div>
+          <div class="timeline-desc">XAI with LLMs; anomaly detection for Iberdrola wind turbines.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2020–2023</div>
+          <div class="timeline-title">PhD in Data Analytics &amp; Decision Science</div>
+          <div class="timeline-org">Politecnico di Milano · cum Laude · ERC-funded</div>
+          <div class="timeline-desc">NLP &amp; AutoML for democratizing data science.</div>
+        </div>
+      </div>
+      <div style="margin-top:2rem"><a href="cv.html" class="btn btn-outline">Full CV →</a></div>
+    </div>
+  </main>
+  <div id="footer-container"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
