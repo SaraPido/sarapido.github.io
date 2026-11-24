@@ -19,7 +19,7 @@ const FOOTER_HTML = `
   <div class="footer-content">
     <div>
       <p class="footer-name">Sara Pidò</p>
-      <p style="font-size:0.85rem;color:#888;margin-bottom:0.75rem">AI Researcher · PostDoc @ SEL, Politecnico di Milano</p>
+      <p style="font-size:0.85rem;color:#888;margin-bottom:0.75rem">AI Manager @ Institute Itech · Milan</p>
       <div class="footer-links">
         <a href="mailto:sarapido95@gmail.com">Email</a>
         <a href="https://linkedin.com/in/sara-pido" target="_blank">LinkedIn</a>
@@ -35,7 +35,7 @@ const FOOTER_HTML = `
   <div class="runner-stage">
     <canvas id="runnerCanvas"></canvas>
   </div>
-  <p class="footer-copy">© 2025 Sara Pidò · Milan, Italy</p>
+  <p class="footer-copy">© 2026 Sara Pidò · Milan, Italy</p>
 </footer>`;
 
 document.addEventListener('DOMContentLoaded', () => {
